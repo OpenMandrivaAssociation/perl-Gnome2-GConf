@@ -1,7 +1,7 @@
 %define module	Gnome2-GConf
 %define name	perl-%{module}
-%define version 1.043
-%define release %mkrel 2
+%define version 1.044
+%define release %mkrel 1
 
 Name: 		%{name}
 Version: 	%{version}
