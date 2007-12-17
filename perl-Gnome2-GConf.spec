@@ -20,7 +20,6 @@ BuildRequires:	perl-ExtUtils-Depends
 BuildRequires:	perl-ExtUtils-PkgConfig 
 Requires:	perl-Glib >= 1.070
 Conflicts:	drakxtools < 9.1-15mdk
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module provides perl access to GNOME-2.x GConf2 libraries.
