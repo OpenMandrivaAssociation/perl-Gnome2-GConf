@@ -1,26 +1,28 @@
-%define module	Gnome2-GConf
-%define name	perl-%{module}
-%define version 1.044
-%define release %mkrel 5
+%define upstream_name	 Gnome2-GConf
+%define upstream_version 1.044
 
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 6
+
 Summary:	Perl module for the gnome2-2.x GConf libraries
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/GNOME and GTK+
-URL:		http://gtk2-perl.sf.net/
-Source:		http://www.cpan.org/modules/by-module/Gnome2/%{module}-%{version}.tar.bz2
-Patch0:		Gnome2-GConf-1.000-cfg_src.patch
-BuildRequires:	perl-devel
+Url:		http://gtk2-perl.sf.net/
+Source0:    http://www.cpan.org/modules/by-module/Gnome2/%{upstream_name}-%{upstream_version}.tar.bz2
+Patch0:		Gnome2-GConf-1.044-cfg_src.patch
+
 BuildRequires:	libGConf2-devel => 2.4.0
-BuildRequires:	perl-Glib => 1.070
-BuildRequires:	perl-Gtk2
-BuildRequires:	perl-ExtUtils-Depends
-BuildRequires:	perl-ExtUtils-PkgConfig 
-Requires:	perl-Glib >= 1.070
-Conflicts:	drakxtools < 9.1-15mdk
+BuildRequires:	perl(Glib) => 1.070
+BuildRequires:	perl(Gtk2)
+BuildRequires:	perl(ExtUtils::Depends)
+BuildRequires:	perl(ExtUtils::PkgConfig)
+BuildRequires:	perl-devel
+
 BuildRoot:	%{_tmppath}/%{name}-%{version}
+
+Conflicts:	drakxtools < 9.1-15mdk
+Requires:	perl-Glib >= 1.070
 
 %description
 This module provides perl access to GNOME-2.x GConf2 libraries.
@@ -31,7 +33,7 @@ can be used with plain GTK+, Xlib, KDE, or even text mode
 applications as well.
 
 %prep
-%setup -q -n %module-%version
+%setup -q -n %{upstream_name}-%{upstream_version}
 find -type d -name CVS | rm -rf 
 %patch0 -p0 -b .cfg_src
 
@@ -49,12 +51,9 @@ rm -rf %{buildroot}
 %clean
 rm -rf %{buildroot}
 
-
 %files
 %defattr(-, root, root)
 %doc AUTHOR README examples
 %{_mandir}/*/*
 %{perl_vendorarch}/Gnome2*
 %{perl_vendorarch}/auto/Gnome2
-
-
