@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 7
+Release:	8
 
 Summary:	Perl module for the gnome2-2.x GConf libraries
 License:	GPL+ or Artistic
