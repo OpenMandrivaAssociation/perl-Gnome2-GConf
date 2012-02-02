@@ -12,7 +12,7 @@ Url:		http://gtk2-perl.sf.net/
 Source0:	http://www.cpan.org/modules/by-module/Gnome2/%{module}-%{upstream_version}.tar.bz2
 Patch0:		Gnome2-GConf-1.044-cfg_src.patch
 
-BuildRequires:	libGConf2-devel => 2.4.0
+BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	perl(Glib) => 1.070
 BuildRequires:	perl(Gtk2)
 BuildRequires:	perl(ExtUtils::Depends)
