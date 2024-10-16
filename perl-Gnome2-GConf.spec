@@ -8,7 +8,7 @@ Release:	10
 Summary:	Perl module for the gnome2-2.x GConf libraries
 License:	GPL+ or Artistic
 Group:		Development/GNOME and GTK+
-Url:		http://gtk2-perl.sf.net/
+Url:		https://gtk2-perl.sf.net/
 Source0:	http://www.cpan.org/modules/by-module/Gnome2/%{module}-%{upstream_version}.tar.bz2
 Patch0:		Gnome2-GConf-1.044-cfg_src.patch
 
